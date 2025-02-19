@@ -2,7 +2,7 @@ function data = convolutional_encoder(input)
     k = 7;
     output = [];
     buffer = zeros(1,k);
-    input = flip(input);
+    % input = flip(input);
 
     for i = 1:length(input)
         buffer(2:end) = buffer(1:end-1);
