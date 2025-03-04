@@ -1,5 +1,5 @@
-function data = convolutional_encoder(input)
+function convEncodedBits = convolutional_encoder(encodedBits)
     k = 7;
     trellis = poly2trellis(k,[171 133]);
-    data = convenc(input, trellis);
+    convEncodedBits = convenc(encodedBits, trellis);
 end

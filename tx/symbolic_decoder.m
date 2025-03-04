@@ -1,8 +1,8 @@
-function data = symbolic_decoder(input)
-    data = char([]);
-    for i = 1:8:length(input)
-        bits = input(i:i+7);
+function decodeMessage = symbolic_decoder(encodedBits)
+    decodeMessage = char([]);
+    for i = 1:8:length(encodedBits)
+        bits = encodedBits(i:i+7);
         byte = uint8(bin2dec(num2str(bits)));
-        data = [data, char(byte)];
+        decodeMessage = [decodeMessage, char(byte)];
     end
 end
