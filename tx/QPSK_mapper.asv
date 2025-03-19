@@ -1,8 +1,0 @@
-function QPSKsymbols = QPSK_mapper(InterleavedBits)
-    numSymbols = size(InterleavedBits)/2;
-    QPSKsymbols = zeros(numSymbols);
-    for i = 1:numSymbols
-        bit1 = InterleavedBits(i);
-        bit2 = InterleavedBits();
-    end
-end
