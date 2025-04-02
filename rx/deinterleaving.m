@@ -1,4 +1,4 @@
-function deInterleavedBits = de_interleaving(interleavedBits)
+function deInterleavedBits = deinterleaving(interleavedBits)
     idX = getappdata(0,'idX');
     
     deInterleavedBits = zeros(size(interleavedBits));

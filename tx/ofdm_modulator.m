@@ -17,11 +17,17 @@ function ofdmSymbols = ofdm_modulator(qpskSymbols, dRS, T)
             SignalWithPilots(i) = qpskElement;
         end
     end
+    setappdata(0,'indexNrs',indexNrs);
+    setappdata(0,'Nz',Nz);
+    setappdata(0,'PilotValue',0.707 + 0.707i);
+    setappdata(0,'C',C);
+    setappdata(0,'T',T);
+    setappdata(0,'dRS',dRS);
 
     SignalWithZeroPadding = zeros(1, Nqpsk + Nrs + 2 * Nz);
     SignalWithZeroPadding(Nz + 1 : end - Nz) = SignalWithPilots;
 
-    odpf = fft(SignalWithZeroPadding);
-    output = [odpf(end - T + 1 : end), odpf];
+    odpf = ifft(SignalWithZeroPadding);
+    output = [odpf(end - T * Nqpsk + 1 : end), odpf];
     ofdmSymbols = output;
 end
